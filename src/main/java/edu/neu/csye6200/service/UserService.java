@@ -29,4 +29,19 @@ public class UserService {
 				.orElseThrow(() -> new EntityNotFoundException("User not found with ID: " + id));
 		userRepository.delete(user);
 	}
+
+	public User updateUser(int id, User updatedUser) {
+		// Fetch the existing user by ID
+		User existingUser = userRepository.findById(id)
+				.orElseThrow(() -> new RuntimeException("User not found with ID: " + id));
+
+		// Update the fields
+		existingUser.setName(updatedUser.getName());
+		existingUser.setAge(updatedUser.getAge());
+		existingUser.setNationality(updatedUser.getNationality());
+		existingUser.setPosition(updatedUser.getPosition());
+
+		// Save the updated user back to the database
+		return userRepository.save(existingUser);
+	}
 }

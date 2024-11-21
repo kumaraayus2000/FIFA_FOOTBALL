@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,6 +40,14 @@ public class UserController {
 	@GetMapping("/users")
 	public void getAllUsernames() {
 		List<User> users = userService.getAllUsers();
-		users.forEach(user -> System.out.println("Username: " + user.getName()));
+		users.forEach(user -> System.out.println("Player Name: " + user.getName() + ", Age: " + user.getAge()
+				+ ", Nationality: " + user.getNationality() + ", Position: " + user.getPosition()));
+
+	}
+
+	@PutMapping("/{id}")
+	public ResponseEntity<User> updateUser(@PathVariable int id, @RequestBody User updatedUser) {
+		User user = userService.updateUser(id, updatedUser);
+		return ResponseEntity.ok(user); // Return the updated user in the response
 	}
 }

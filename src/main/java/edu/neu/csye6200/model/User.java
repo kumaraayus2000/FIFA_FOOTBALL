@@ -16,7 +16,11 @@ public class User {
 
 	private String name;
 
-	private String email;
+	private int age;
+
+	private String nationality;
+
+	private String position;
 
 	// Getters and Setters
 
@@ -36,11 +40,28 @@ public class User {
 		this.name = name;
 	}
 
-	public String getEmail() {
-		return email;
+	public int getAge() {
+		return age;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setAge(int age) {
+		this.age = age;
 	}
+
+	public String getNationality() {
+		return nationality;
+	}
+
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
+	}
+
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
+	}
+
 }
