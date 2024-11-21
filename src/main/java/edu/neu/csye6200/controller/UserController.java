@@ -1,8 +1,11 @@
 package edu.neu.csye6200.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,5 +34,11 @@ public class UserController {
 	public ResponseEntity<String> deleteUser(@PathVariable int id) {
 		userService.deleteUser(id);
 		return ResponseEntity.ok("User deleted successfully");
+	}
+
+	@GetMapping("/users")
+	public void getAllUsernames() {
+		List<User> users = userService.getAllUsers();
+		users.forEach(user -> System.out.println("Username: " + user.getName()));
 	}
 }

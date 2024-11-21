@@ -1,5 +1,7 @@
 package edu.neu.csye6200.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,10 @@ import jakarta.persistence.EntityNotFoundException;
 public class UserService {
 	@Autowired
 	private UserRepository userRepository;
+
+	public List<User> getAllUsers() {
+		return userRepository.findAll();
+	}
 
 	// Add user to the database
 	public User addUser(User user) {
