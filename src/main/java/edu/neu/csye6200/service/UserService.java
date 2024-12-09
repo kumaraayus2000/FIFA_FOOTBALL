@@ -10,7 +10,7 @@ import edu.neu.csye6200.repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 
 @Service
-public class UserService {
+public class UserService implements UserServiceInterface{
 	@Autowired
 	private UserRepository userRepository;
 
@@ -19,8 +19,8 @@ public class UserService {
 	}
 
 	// Add user to the database
-	public User addUser(User user) {
-		return userRepository.save(user);
+	public User addUser(Object user) {
+		return userRepository.save((User)user);
 	}
 
 	// Delete user from the database by ID

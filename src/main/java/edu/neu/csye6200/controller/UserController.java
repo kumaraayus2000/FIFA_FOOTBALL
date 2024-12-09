@@ -1,6 +1,9 @@
 package edu.neu.csye6200.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -38,10 +41,20 @@ public class UserController {
 	}
 
 	@GetMapping("/users")
-	public void getAllUsernames() {
+	public ResponseEntity<List<Map<String, Object>>> getAllUsernames() {
 		List<User> users = userService.getAllUsers();
-		users.forEach(user -> System.out.println("Player Name: " + user.getName() + ", Age: " + user.getAge()
-				+ ", Nationality: " + user.getNationality() + ", Position: " + user.getPosition()));
+//		users.forEach(user -> System.out.println("Player Name: " + user.getName() + ", Age: " + user.getAge()
+//				+ ", Nationality: " + user.getNationality() + ", Position: " + user.getPosition()));
+		List<Map<String, Object>> response = users.stream().map(user -> {
+			Map<String, Object> userDetails = new HashMap<>();
+			userDetails.put("name", user.getName());
+			userDetails.put("age", user.getAge());
+			userDetails.put("nationality", user.getNationality());
+			userDetails.put("position", user.getPosition());
+			return userDetails;
+		}).collect(Collectors.toList());
+
+		return ResponseEntity.ok(response);
 
 	}
 
