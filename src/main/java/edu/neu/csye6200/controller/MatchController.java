@@ -7,6 +7,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
@@ -15,13 +22,13 @@ public class MatchController {
     @Autowired
     private MatchService matchService;
 
-    @PostMapping
+    @PostMapping("/createMatch")
     public ResponseEntity<Match> createMatch(@RequestBody Match match) {
         Match savedMatch = matchService.createMatch(match);
-        return ResponseEntity.ok(savedMatch);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedMatch);
     }
 
-    @GetMapping
+    @GetMapping("/getAllMatches")
     public ResponseEntity<List<Match>> getAllMatches() {
         List<Match> matches = matchService.getAllMatches();
         return ResponseEntity.ok(matches);
