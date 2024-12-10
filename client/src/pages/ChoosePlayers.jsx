@@ -8,6 +8,9 @@ import axios from "axios";
 const ChoosePlayers = () => {
   const [team1Players, setTeam1Players] = useState([]);
   const [team2Players, setTeam2Players] = useState([]);
+  const [venue, setVenue] = useState("");
+  const [team1Name, setTeam1Name] = useState("");
+  const [team2Name, setTeam2Name] = useState("");
   const [players, setPlayers] = useState([]);
   const [error, setError] = useState([]);
 
@@ -53,15 +56,29 @@ const ChoosePlayers = () => {
     fetchPlayers();
   }, []);
 
+  const handleClick = () => {
+    console.log(team1Name, team1Players, team2Name, team2Players, venue);
+  };
+
   return (
     <div className="choose-players-container">
       <div className="form">
         <div className="form-row">
-          <TextField label="Venue" />
+          <TextField
+            label="Venue"
+            value={venue}
+            handleChange={setVenue}
+            name="venue"
+          />
         </div>
         <div className="form-row">
           <div className="team-section">
-            <TextField label="Team1 Name" />
+            <TextField
+              label="Team1 Name"
+              value={team1Name}
+              handleChange={setTeam1Name}
+              name="team1Name"
+            />
             <div className="dropdown">
               <TextField label="Team1 Players" />
               <div className="dropdown-content">
@@ -85,7 +102,12 @@ const ChoosePlayers = () => {
           </div>
 
           <div className="team-section">
-            <TextField label="Team2 Name" />
+            <TextField
+              label="Team2 Name"
+              value={team2Name}
+              handleChange={setTeam2Name}
+              name="team2Name"
+            />
             <div className="dropdown">
               <TextField label="Team2 Players" />
               <div className="dropdown-content">
@@ -140,7 +162,7 @@ const ChoosePlayers = () => {
       </div>
 
       <div className="start-game-button">
-        <Button text="Start Game" />
+        <Button text="Start Game" handleClick={handleClick} />
       </div>
     </div>
   );

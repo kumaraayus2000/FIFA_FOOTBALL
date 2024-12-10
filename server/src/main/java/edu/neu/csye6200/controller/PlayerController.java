@@ -48,7 +48,7 @@ public class PlayerController {
 
 		List<Map<String, Object>> response = players.stream().map(player -> {
 			Map<String, Object> playerDetails = new HashMap<>();
-			playerDetails.put("name", player.getId());
+			playerDetails.put("id", player.getId());
 			playerDetails.put("name", player.getName());
 			playerDetails.put("age", player.getAge());
 			playerDetails.put("nationality", player.getNationality());
