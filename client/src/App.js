@@ -10,6 +10,8 @@ import Betting from "pages/Betting";
 import Payment from "pages/PaymentForm";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import PlayersCards from "pages/PlayersCards";
+import Matches from "pages/Matches";
 
 import { AuthProvider, useAuth } from './utils/auth/AuthContext';
 
@@ -40,6 +42,8 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/signup-bio" element={<SignUpBio />} />
+            <Route path="/playercards" element={<PlayersCards />} />
+            <Route path="/matches" element={<Matches/>} />
             <Route
               path="/"
               element={
@@ -74,6 +78,7 @@ const App = () => {
                 </PrivateRoute>
               }
             />
+
             <Route path="*" element={<h1>404 - Page Not Found</h1>} />
           </Routes>
         </Router>
