@@ -23,6 +23,9 @@ public class Match {
     @Temporal(TemporalType.TIMESTAMP)
     private Date matchDate;
 
+    @Column(name = "teamA vs teamB: socreA-scoreB (format)")
+    private String score;
+
     // Getters and Setters
     public int getId() {
         return id;
@@ -64,4 +67,11 @@ public class Match {
         this.matchDate = matchDate;
     }
 
+    public String getScore() {
+        return score;
+    }
+
+    public void setScore(String score) {
+        this.score = score;
+    }
 }
