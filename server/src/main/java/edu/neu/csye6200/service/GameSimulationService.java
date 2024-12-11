@@ -2,8 +2,8 @@ package edu.neu.csye6200.service;
 
 
 import edu.neu.csye6200.model.Match;
-import edu.neu.csye6200.model.User;
-import edu.neu.csye6200.repository.UserRepository;
+import edu.neu.csye6200.model.Player;
+import edu.neu.csye6200.repository.PlayerRepository;
 import edu.neu.csye6200.simulation.AbstractPlayer;
 import edu.neu.csye6200.simulation.PlayerFactory;
 import jakarta.persistence.EntityNotFoundException;
@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class GameSimulationService {
 
     @Autowired
-    private UserRepository userRepository;
+    private PlayerRepository playerRepository;
 
     @Autowired
     private MatchService matchService;
@@ -39,17 +39,17 @@ public class GameSimulationService {
 
         List<AbstractPlayer> team1Players = new ArrayList<>();
         for (Integer i: team1){
-            User user = userRepository.findById(i)
+            Player player = playerRepository.findById(i)
                     .orElseThrow(() -> new EntityNotFoundException("User not found with ID: " + i));
-            AbstractPlayer ap = playerFactory.getObject(user.getId(), user.getPosition(), user.getName());
+            AbstractPlayer ap = playerFactory.getObject(player.getId(), player.getPosition(), player.getName());
             team1Players.add(ap);
         }
 
         List<AbstractPlayer> team2Players = new ArrayList<>();
         for (Integer i: team2){
-            User user = userRepository.findById(i)
+            Player player = playerRepository.findById(i)
                     .orElseThrow(() -> new EntityNotFoundException("User not found with ID: " + i));
-            AbstractPlayer ap = playerFactory.getObject(user.getId(), user.getPosition(), user.getName());
+            AbstractPlayer ap = playerFactory.getObject(player.getId(), player.getPosition(), player.getName());
             team2Players.add(ap);
         }
 
