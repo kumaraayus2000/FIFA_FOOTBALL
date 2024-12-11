@@ -75,9 +75,10 @@ export const Navbar = () => {
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Choose Players
         </Typography>
-        {/* <Button color="inherit" sx={{ mr: 2}} onClick={() => navigate("/betting")}Betting ></Button> */}
-        <Button color="inherit" sx={{ mr: 2 }}>Stats</Button>
-        <Button color="inherit" sx={{ mr: 2 }}>Matches</Button>
+        <Button color="inherit" sx={{ mr: 2 }} onClick={() => navigate("/choose-players")}>Game</Button>
+         <Button color="inherit" sx={{ mr: 2}} onClick={() => navigate("/betting")}>Betting </Button>
+        <Button color="inherit" sx={{ mr: 2 }} onClick={() => navigate("/playercards")} >Players</Button>
+        <Button color="inherit" sx={{ mr: 2 }} onClick={() => navigate("/matches")}>Matches</Button>
         <div className="auth-buttons">
           {isAuthenticated ? (
             <button onClick={handleLogout} className="auth-button">
