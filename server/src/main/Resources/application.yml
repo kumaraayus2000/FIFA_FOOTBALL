@@ -23,3 +23,8 @@ spring:
     cors:
       allowed-origins: http://localhost:3000
       allowed-methods: GET,POST,PUT,DELETE
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+
+stripe:
+  api:
+    key: sk_test_51QNlBqBhwWVqOPIE25PWrLH07t3ohVKlDaNkw3JAKypujpjCzDmDgmHA6Xs9ChutB0NSdWn2PeUYYT9RwEC8dLfM00Pgy4G31i
