@@ -65,7 +65,7 @@ const App = () => {
               }
             />
             <Route
-              path="/choose-players"
+              path="/payment"
               element={
                 <PrivateRoute>
                   <Elements stripe={stripePromise}>
