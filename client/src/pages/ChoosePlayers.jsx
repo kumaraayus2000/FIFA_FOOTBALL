@@ -3,7 +3,7 @@ import "styles/pages/choose-players.css";
 import Avatar from "components/Avatar";
 import Button from "components/Button";
 import TextField from "components/Textfield";
-import axios from "axios";
+import apiClient from "../utils/apiClient";
 
 const ChoosePlayers = () => {
   const [team1Players, setTeam1Players] = useState([]);
@@ -39,7 +39,7 @@ const ChoosePlayers = () => {
   useEffect(() => {
     const fetchPlayers = async () => {
       try {
-        const response = await axios.get(
+        const response = await apiClient.get(
           "http://localhost:8080/api/players/players"
         );
 

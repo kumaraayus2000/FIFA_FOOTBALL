@@ -5,26 +5,30 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Lob;
+import jakarta.persistence.Column;
 
 @Entity
-@Table(name = "customers") // Changed table name to 'customers'
+@Table(name = "customers")
 public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id; // Unique identifier for the Customer
+    private int id;
 
-    private String username; // Username for login
-    private String email;    // Email for login
-    private String password; // Password for authentication
-    private String avatar;   // Profile picture
-    private String bio;      // Short bio of the customer
+    private String username;
+    private String email;
+    private String password;
 
-    // Default constructor (required by JPA)
-    public Customer() {
-    }
+    @Lob
+    @Column(name = "avatar", columnDefinition = "TEXT")
+    private String avatar;
 
-    // Constructor with all fields
+    private String bio;
+
+    // Default constructor
+    public Customer() {}
+
     public Customer(String username, String email, String password, String avatar, String bio) {
         this.username = username;
         this.email = email;
