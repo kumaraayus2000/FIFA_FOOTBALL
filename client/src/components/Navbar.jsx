@@ -90,6 +90,7 @@ export const Navbar = () => {
           color="inherit"
           aria-label="menu"
           sx={{ mr: 2 }}
+          onClick={() => navigate("/home")}
         >
           <SportsFootball />
         </IconButton>

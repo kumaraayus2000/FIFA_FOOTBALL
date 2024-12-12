@@ -12,6 +12,8 @@ import {
   TextField,
 } from "@mui/material";
 import axios from "axios";
+import backgroundImage from "../assets/imgs/FIFA-PROJECT-WORLD-CUP-BACKGORUNG-IMAGE.jpg"; // Adjust the path
+
 import DeleteIcon from "@mui/icons-material/Delete";
 
 const PlayerCards = () => {
@@ -128,6 +130,22 @@ const PlayerCards = () => {
   }
 
   return (
+    <Box
+    sx={{
+      height: "90vh",
+      width: "100%",
+      backgroundImage: `url(${backgroundImage})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "space-between",
+      color: "white",
+      textAlign: "center",
+      padding: "20px",
+    }}
+  >
     <Box
       sx={{
         maxWidth: "1200px",
@@ -342,6 +360,7 @@ const PlayerCards = () => {
           </Box>
         </Box>
       </Modal>
+    </Box>
     </Box>
   );
 };

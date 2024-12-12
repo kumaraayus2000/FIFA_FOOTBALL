@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Box, TextField, Button, Typography, Paper } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import backgroundImage from "../assets/imgs/FIFA-PROJECT-WORLD-CUP-BACKGORUNG-IMAGE.jpg"; // Adjust the path
+
 
 
 const BettingPage = () => {
@@ -41,6 +43,22 @@ const BettingPage = () => {
   };
 
   return (
+    <Box
+    sx={{
+      height: "90vh",
+      width: "100%",
+      backgroundImage: `url(${backgroundImage})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "space-between",
+      color: "white",
+      textAlign: "center",
+      padding: "20px",
+    }}
+  >
     <Box
       sx={{
         maxWidth: 600,
@@ -152,6 +170,7 @@ const BettingPage = () => {
         </Paper>
       )}
     </Box>
+  </Box>
   );
 };
 
