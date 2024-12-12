@@ -73,7 +73,7 @@ export const Navbar = () => {
           <SportsFootball />
         </IconButton>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Choose Players
+          FIFA Soccer Simulator
         </Typography>
         <Button color="inherit" sx={{ mr: 2 }} onClick={() => navigate("/choose-players")}>Game</Button>
          <Button color="inherit" sx={{ mr: 2}} onClick={() => navigate("/betting")}>Betting </Button>
