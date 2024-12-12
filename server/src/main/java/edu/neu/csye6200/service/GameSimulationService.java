@@ -79,16 +79,16 @@ public class GameSimulationService {
 
         // Each player's score is dropped 5% after each match
         // The player is non-playable is score is below 60
-        List<Integer> idsBelow60Team1 = team1Players.stream()
+        List<String> idsBelow60Team1 = team1Players.stream()
                 .peek(p -> p.setHealthScore((int) (p.getHealthScore() * 0.95)))
                 .filter(p -> p.getHealthScore() < 60)
-                .map(AbstractPlayer::getId)
+                .map(AbstractPlayer::getName)
                 .collect(Collectors.toList());
 
-        List<Integer> idsBelow60Team2 = team2Players.stream()
+        List<String> idsBelow60Team2 = team2Players.stream()
                 .peek(p -> p.setHealthScore((int) (p.getHealthScore() * 0.95)))
                 .filter(p -> p.getHealthScore() < 60)
-                .map(AbstractPlayer::getId)
+                .map(AbstractPlayer::getName)
                 .collect(Collectors.toList());
 
 
