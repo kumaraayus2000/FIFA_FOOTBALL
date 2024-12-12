@@ -63,7 +63,7 @@ export const Navbar = () => {
   const navbarTitle = () => {
     switch (location.pathname) {
       case "/choose-players":
-        return "Choose Players";
+        return "FIFA Soccer Simulator";
       case "/playercards":
         return "Players";
       case "/matches":
