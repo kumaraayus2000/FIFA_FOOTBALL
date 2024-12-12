@@ -190,6 +190,7 @@ import {
   LocationOn as LocationIcon,
   CalendarToday as CalendarIcon,
 } from "@mui/icons-material";
+import backgroundImage from "../assets/imgs/FIFA-PROJECT-WORLD-CUP-BACKGORUNG-IMAGE.jpg"; // Adjust the path
 import axios from "axios";
 
 const Matches = () => {
@@ -270,6 +271,22 @@ const Matches = () => {
   }
 
   return (
+    <Box
+    sx={{
+      height: "90vh",
+      width: "100%",
+      backgroundImage: `url(${backgroundImage})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "space-between",
+      color: "white",
+      textAlign: "center",
+      padding: "20px",
+    }}
+  >
     <Box
       sx={{
         maxWidth: "1200px",
@@ -429,6 +446,7 @@ const Matches = () => {
           </Button>
         </DialogActions>
       </Dialog>
+    </Box>
     </Box>
   );
 };

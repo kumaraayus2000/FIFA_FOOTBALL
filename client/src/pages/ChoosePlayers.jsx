@@ -261,6 +261,8 @@ import {
   DialogActions,
 } from "@mui/material";
 import axios from "axios";
+import backgroundImage from "../assets/imgs/FIFA-PROJECT-WORLD-CUP-BACKGORUNG-IMAGE.jpg"; // Adjust the path
+
 
 const ChoosePlayers = () => {
   const [team1Players, setTeam1Players] = useState([]);
@@ -338,6 +340,22 @@ const ChoosePlayers = () => {
   };
 
   return (
+    <Box
+    sx={{
+      height: "90vh",
+      width: "100%",
+      backgroundImage: `url(${backgroundImage})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "space-between",
+      color: "white",
+      textAlign: "center",
+      padding: "20px",
+    }}
+  >
     <Box
       sx={{
         maxWidth: "1200px",
@@ -468,6 +486,7 @@ const ChoosePlayers = () => {
           </Button>
         </DialogActions>
       </Dialog>
+    </Box>
     </Box>
   );
 };
