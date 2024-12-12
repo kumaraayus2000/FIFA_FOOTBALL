@@ -3,6 +3,7 @@ import { Box, Button, Typography } from "@mui/material";
 import backgroundImage from "../assets/imgs/FIFA-PROJECT-WORLD-CUP-BACKGORUNG-IMAGE.jpg"; // Adjust the path
 import startGameImage from "../assets/imgs/FIFA-PROJECT-IMAGE-1.jpg"; // Adjust the path
 import betImage from "../assets/imgs/FIFA-PROJECT-IMAGE-2.webp"; // Adjust the path
+import { useNavigate } from 'react-router-dom';
 
 // const HomePage = () => {
 //     return (
@@ -134,6 +135,8 @@ import betImage from "../assets/imgs/FIFA-PROJECT-IMAGE-2.webp"; // Adjust the p
 //   export default HomePage;
 
 const HomePage = () => {
+    const navigate = useNavigate();
+
     return (
       <Box
         sx={{
@@ -187,7 +190,7 @@ const HomePage = () => {
               src={startGameImage}
               alt="Start Game"
               sx={{
-                width: "300px", // Make image larger
+                width: "550px", // Make image larger
                 height: "auto",
                 marginBottom: 2,
                 borderRadius: "10px",
@@ -207,7 +210,7 @@ const HomePage = () => {
                 "&:hover": {
                   backgroundColor: "#ff79a7",
                 },
-              }}
+              }} onClick={() => navigate("/choose-players")}
             >
               Start Game
             </Button>
@@ -227,7 +230,7 @@ const HomePage = () => {
               src={betImage}
               alt="Bet"
               sx={{
-                width: "300px", // Make image larger
+                width: "600px", // Make image larger
                 height: "auto",
                 marginBottom: 2,
                 borderRadius: "10px",
@@ -247,7 +250,7 @@ const HomePage = () => {
                 "&:hover": {
                   backgroundColor: "#ffc947",
                 },
-              }}
+             }}  onClick={() => navigate("/betting")}
             >
               Bet
             </Button>
