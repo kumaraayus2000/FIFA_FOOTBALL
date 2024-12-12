@@ -30,7 +30,7 @@ const Login = () => {
         apiClient.post('/api/customers/login', { email: email, password: password }).then((result) => {
             console.log(result);
             login();
-            navigate('/');
+            navigate('/home');
         }).catch((err) => {
             setError('Invalid email or password');
         });

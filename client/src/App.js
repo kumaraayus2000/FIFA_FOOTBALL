@@ -14,6 +14,8 @@ import PlayersCards from "pages/PlayersCards";
 import Matches from "pages/Matches";
 
 import { AuthProvider, useAuth } from './utils/auth/AuthContext';
+import HomePage from "pages/HomePage";
+import SuccessPage from "pages/SuccessPage";
 
 const stripePromise = loadStripe("pk_test_51QNlBqBhwWVqOPIEOVEhW42AyQxnyDlwnEwsz7mV9EtVzwm6gMRBFqNSxsCqFSrbM4gASUTHd1WvhY6Yuk8HBAU8008wGRAIJy");
 
@@ -44,6 +46,8 @@ const App = () => {
             <Route path="/signup-bio" element={<SignUpBio />} />
             <Route path="/playercards" element={<PlayersCards />} />
             <Route path="/matches" element={<Matches/>} />
+            <Route path="/home" element={<HomePage/>}/>
+            <Route path="/success" element={<SuccessPage/>}/>
             <Route
               path="/"
               element={
