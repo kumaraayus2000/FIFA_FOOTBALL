@@ -48,7 +48,7 @@ const PlayerCards = () => {
     };
 
     fetchPlayers();
-  }, []);
+  }, [newPlayer]);
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
