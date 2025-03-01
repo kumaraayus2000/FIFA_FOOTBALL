@@ -21,10 +21,3 @@ Submissions will have deadlines, failed GitHub Actions would result in point ded
 ### References
 1. Cloning a Repository: <https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository>
 2. Any GitHub Setup: Please refer to the Git & GitHub Fundamentals Repository shared to you by your respective TA and refer the README.md section
-
-Please reach out to your respective TA if you need any help in regards with submission/ GitHub
-
-Author:
-- Gokul Jayavel (jayavel.g@northeastern.edu)
-- Siddharth Dumbre (dumbre.si@northeastern.edu)
-- Vamsi Naradasu (naradasu.v@northeastern.edu)
