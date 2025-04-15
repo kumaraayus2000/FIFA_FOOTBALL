@@ -1,22 +1,12 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/1MZiuvVq)
-# Welcome to the course CSYE6200 - Concepts Of OOD
-> Northeastern University, College of Engineering
+#
 
+Project Highlights
+Developed a Scalable Soccer Betting Platform:
+Engineered a robust Soccer Betting Web Application using Spring Boot for the backend and PostgreSQL for data persistence. The system was designed to handle 500+ daily transactions efficiently, incorporating optimized CRUD operations and asynchronous processing where applicable. These enhancements collectively contributed to a 25% improvement in system performance and response time, ensuring a seamless user experience even under heavy load.
 
-## Professor: Daniel Peters
-
-### Requirements
-1. Eclipse or VS Code or IntelliJ.
-
-Note: If you are using Eclipse, please have git CLI installed on your system or GitHub Desktop to commit the code in this repository
-
-### SetUp Instructions
-1. Please clone the repository on your local system
-2. For Eclipse Import the project as Existing Maven Project, For IntelliJ you can directlty open it using 'Get from VCS'.
-4. All code should be pushed to the main branch
-3. Ensure the GitHub actions are successful post push
-
-Submissions will have deadlines, failed GitHub Actions would result in point deductions.
+Modern and Responsive Frontend Development:
+Built and styled a fully responsive user interface using React.js and JavaScript, focusing on user-centric design principles. Key features include secure user authentication, email verification, and intuitive navigation for betting and transaction history. Additionally, contributed to platform stability by personally resolving over 10+ UI-related support tickets weekly, enhancing the reliability and visual consistency of the application.
 
 ### References
 1. Cloning a Repository: <https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository>
